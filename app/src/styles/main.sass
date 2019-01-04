@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great')
+
+$white: #fff
+$red: #ff0000
+
+root
+  box-sizing: border-box
+
+
+*,
+*::after,
+*::before
+  box-sizing: inherit
+
+
+body, html
+  background: url('../assets/images/bg.png') repeat
+  background-position: center
+  margin: 0
+  padding: 0
+  overflow: hidden
+
+#board
+  display: grid
+  // even distribustion between rows and columns
+  grid-template: repeat(3, 165.65px) / repeat(3, 165.65px)
+  margin: 7em auto
+  height: 500px
+  width: 500px
+
+.square
+  border: 3px solid $white
+  border-radius: 15px
+  text-align: center
+  font-family: 'Fredericka the Great', cursive
+  font-size: 8em
+  color: $red
+.top
+  border-top: none
+.right
+  border-right: none
+.bottom
+  border-bottom: none
+.left
+  border-left: none
+
+.disable
+  pointer-events: none
