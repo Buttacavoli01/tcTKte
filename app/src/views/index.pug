@@ -4,18 +4,17 @@ html(lang="en",dir="ltr")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title
-    link(rel="stylesheet", href="styles/main.min.css")
-    
-  body
+    link(rel="stylesheet", href="dist/styles/main.min.css")
+
+  body(onload="startGame();")
     #board
-      .square.top.left#1
-      .square.top#2 o
-      .square.top.right#3
-      .square.center.left#4
-      .square.center#5 x
-      .square.center.right#6
-      .square.bottom.left#7
-      .square.bottom#8
-      .square.bottom.right#9
-  script(src="scripts/main.min.js")
-    
+      .square.top.left#0
+      .square.top#1 
+      .square.top.right#2
+      .square.center.left#3
+      .square.center#4
+      .square.center.right#5
+      .square.bottom.left#6
+      .square.bottom#7
+      .square.bottom.right#8
+    script(src="dist/scripts/main.min.js")
