@@ -7,14 +7,16 @@ html(lang="en",dir="ltr")
     link(rel="stylesheet", href="dist/styles/main.min.css")
 
   body(onload="startGame();")
+    h1#message
     #board
-      .square.top.left#0
-      .square.top#1 
-      .square.top.right#2
+      .square.top.left#0 X
+      .square.top#1
+      .square.top.right#2 O
       .square.center.left#3
-      .square.center#4
+      .square.center#4 O
       .square.center.right#5
-      .square.bottom.left#6
+      .square.bottom.left#6 O
       .square.bottom#7
-      .square.bottom.right#8
+      .square.bottom.right#8 X
+
     script(src="dist/scripts/main.min.js")

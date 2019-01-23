@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great')
-
-$white: #fff
-$red: #ff0000
+$ff: 'Fredericka the Great', cursive
+$wht-smk : whitesmoke
 
 root
   box-sizing: border-box
-
 
 *,
 *::after,
@@ -16,25 +14,31 @@ root
 body, html
   background: url('../assets/images/bg.png') repeat
   background-position: center
-  margin: 0
-  padding: 0
   overflow: hidden
+  text-rendering: optimizeLegibility
+  font-family: $ff
+
+#message
+  text-align: center
+  font-size: 3em
+  border-bottom: 1px solid $wht-smk
+  font-weight: lighter
+
 
 #board
   display: grid
-  // even distribustion between rows and columns
+  // even distribustion between rows and columns to equal 500px H & W
   grid-template: repeat(3, 165.65px) / repeat(3, 165.65px)
   margin: 7em auto
   height: 500px
   width: 500px
 
 .square
-  border: 3px solid $white
-  border-radius: 15px
+  border: 3px solid $wht-smk
+  border-radius: 25px
   text-align: center
-  font-family: 'Fredericka the Great', cursive
   font-size: 8em
-  color: $red
+
 .top
   border-top: none
 .right
@@ -43,6 +47,5 @@ body, html
   border-bottom: none
 .left
   border-left: none
-
 .disable
   pointer-events: none
