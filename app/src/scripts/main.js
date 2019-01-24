@@ -1,25 +1,28 @@
-//const board = document.getElementById('board')
-let squares = document.querySelectorAll('.square');
-let id = document.getElementById(this);
-let msg = document.getElementById('message');
+const board = document.getElementById('board');
+const squares = document.querySelectorAll('.square');
+const msg = document.getElementById('message');
 let moves = 0;
 let player;
+const msg1 = 'It\'s O\'s turn';
+const msg2 = 'It\'s X\'s turn';
 
-let player1 = {
-  name: "Player One",
-  marker: "X",
-  color: "red"
+const player1 = {
+  marker: 'X',
+  color: 'red'
 };
-let player2 = {
-  name: "Player Two",
-  marker: "0",
-  color: "yellow"
+const player2 = {
+  marker: '0',
+  color: 'yellow'
 };
 
 function startGame() {
-  squares.forEach(i => i.innerHTML = "");
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].innerText = '';
+    squares[i].style = null;
+  }
   moves = 0;
-  setMessage("It's Player One's Turn ");
+  setMessage(msg2);
+  board.style.pointerEvents = null;
 }
 
 function setMessage(message) {
@@ -27,20 +30,22 @@ function setMessage(message) {
 }
 
 function changeUser(moves) {
-  if (moves % 2 === 0) {
+  if (moves % 2 == 0) {
     player = player1;
-    setMessage(`It's Player Two's turn`);
+    setMessage(msg1);
   } else {
     player = player2;
-    setMessage(`It's Player One's turn`);
-
+    setMessage(msg2);
   }
+  setProps();
 
+  if (moves > 3) checkWinner(player.marker);
+}
+
+function setProps(ev) {
   event.target.innerText = player.marker;
   event.target.style.color = player.color;
-  msg.style.color = player.color;
   event.target.style.pointerEvents = 'none';
-  if(moves > 3) checkWinner(player.marker);
 }
 
 function checkWinner(move) {
@@ -54,8 +59,8 @@ function checkWinner(move) {
     checkRow(0, 4, 8, move) ||
     checkRow(2, 4, 6, move)) {
     result = true;
-    setMessage(`${player.name} won!`);
-    //squares.style.pointerEvents = "none"
+    setMessage(`${player.marker} won!`);
+    board.style.pointerEvents = 'none';
   }
   if (moves >= 8 && result == false) {
     setMessage('It\'s a draw!');

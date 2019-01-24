@@ -12,24 +12,31 @@ root
 
 
 body, html
-  background: url('../assets/images/bg.png') repeat
-  background-position: center
+  background: url('../assets/images/bg.png') repeat center
   overflow: hidden
-  text-rendering: optimizeLegibility
   font-family: $ff
 
-#message
+.heading
+  display: flex
+  align-items: baseline
+  justify-content: space-around
   text-align: center
-  font-size: 3em
+  width: 50%
+  //centers div
+  margin-left: 25%
   border-bottom: 1px solid $wht-smk
-  font-weight: lighter
+  border-radius: 2em
+  #message
+    font-weight: lighter
+    
+
 
 
 #board
   display: grid
   // even distribustion between rows and columns to equal 500px H & W
   grid-template: repeat(3, 165.65px) / repeat(3, 165.65px)
-  margin: 7em auto
+  margin: 5em auto
   height: 500px
   width: 500px
 

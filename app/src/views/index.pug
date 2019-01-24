@@ -3,20 +3,24 @@ html(lang="en",dir="ltr")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title
+    title Tic-Tac-Toe
     link(rel="stylesheet", href="dist/styles/main.min.css")
-
-  body(onload="startGame();")
-    h1#message
+    link(rel="icon" type="image/png" sizes="32x32" href="dist/assets/images/favicon-32x32.png")
+    
+  body(onload="startGame();", style="color: #4cbb17")
+    .heading
+      h1#message
+      span
+        button#play(onclick="startGame()") play again
     #board
-      .square.top.left#0 X
+      .square.top.left#0
       .square.top#1
-      .square.top.right#2 O
+      .square.top.right#2
       .square.center.left#3
-      .square.center#4 O
+      .square.center#4
       .square.center.right#5
-      .square.bottom.left#6 O
+      .square.bottom.left#6
       .square.bottom#7
-      .square.bottom.right#8 X
+      .square.bottom.right#8
 
     script(src="dist/scripts/main.min.js")
