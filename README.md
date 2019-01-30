@@ -15,4 +15,4 @@
 https://buttacavoli01.github.io/tcTKte/.
 
 
-![alt text](todo.png)
+![alt text](tictac.png)
